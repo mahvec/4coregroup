@@ -3,8 +3,16 @@ import background from "../assets/back.svg";
 import logo from "../assets/logo.svg";
 
 function Hero() {
+  const data = [
+    { id: 0, content: "IT Consulting" },
+    { id: 1, content: "Revenue Optimization" },
+    { id: 2, content: "Enterprise Development" },
+    { id: 3, content: "Research & Development" },
+    { id: 4, content: "Training & Advocacy Consulting" },
+    { id: 4, content: "Database Administration & Management" },
+  ];
   return (
-    <div className="w-full h-[100vh]">
+    <div className="w-full h-[100vh] bg-gray-200">
       <div
         style={{ backgroundImage: `url(${background})` }}
         className="max-w-[780px] mx-auto bg-cover bg-center bg-no-repeat h-full"
@@ -17,12 +25,12 @@ function Hero() {
 
         <div className="max-w-[480px] mx-auto p-5">
           <p className="font-semibold text-[22px]">Dennis Obeto</p>
-          <p className="bg-[#F88600] text-sm">Director, C.O.O.</p>
+          <p className="text-[#F88600] text-sm">Director, C.O.O.</p>
         </div>
 
         <div className="w-full bg-gray-600">
-          <div className="max-w-[480px] mx-auto p-5">
-            <p className="flex items-center">
+          <div className="max-w-[480px] mx-auto p-5 flex flex-col gap-5 text-white  ">
+            <p className="flex items-center gap-4">
               <span className="">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -49,9 +57,76 @@ function Hero() {
                   />
                 </svg>
               </span>
+
+              <a href="tel:++2348182137292">+234-818-213-7292</a>
+            </p>
+
+            <p className="flex items-center gap-4">
+              <span className="">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="18"
+                  height="18"
+                  viewBox="0 0 18 18"
+                  fill="none"
+                >
+                  <path
+                    d="M1.5 9C1.5 6.17157 1.5 4.75736 2.37868 3.87868C3.25736 3 4.67157 3 7.5 3H10.5C13.3284 3 14.7426 3 15.6213 3.87868C16.5 4.75736 16.5 6.17157 16.5 9C16.5 11.8284 16.5 13.2426 15.6213 14.1213C14.7426 15 13.3284 15 10.5 15H7.5C4.67157 15 3.25736 15 2.37868 14.1213C1.5 13.2426 1.5 11.8284 1.5 9Z"
+                    stroke="white"
+                    strokeWidth="1.125"
+                  />
+                  <path
+                    d="M4.5 6L6.11917 7.34931C7.49665 8.49721 8.18539 9.07116 9 9.07116C9.81461 9.07116 10.5034 8.49721 11.8808 7.34931L13.5 6"
+                    stroke="white"
+                    strokeWidth="1.125"
+                    strokeLinecap="round"
+                  />
+                </svg>
+              </span>
+
+              <a href="mailto:dennis@4coretech.com">dennis@4coretech.com</a>
             </p>
           </div>
         </div>
+
+        <div className="max-w-[480px] mx-auto flex flex-col gap-4 px-10 py-5">
+          {data.map((item) => (
+            <div className="flex items-center gap-2 text-xs" key={item.id}>
+              <p className="bg-[#F88600] p-0.5  "></p>
+              <p className="font-semibold">{item.content}</p>
+            </div>
+          ))}
+        </div>
+
+        <div className="max-w-[480px] mx-auto p-5 text-xs">
+          <div className="flex flex-col gap-1">
+            <p className="font-semibold">OFFICE ADDRESS:</p>
+            <p className="">
+              38 Asheik Jarma Street, Off Mike Akhigbe Boulevard, Jabi District,
+              FCT, Abuja.
+            </p>
+          </div>
+        </div>
+
+        <button className="bg-[#F88600] rounded-3xl p-2 px-4 text-white gap-4 w-fit mx-auto shadow-md flex items-center text-[12px] font-semibold">
+          <a href="http://www.4coretech.com" className="w-full ">
+            www.4coretech.com
+          </a>
+          <span>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="13"
+              height="13"
+              viewBox="0 0 13 13"
+              fill="none"
+            >
+              <path
+                d="M9.74019 11.5999L6.95055 8.81029L6.09867 9.66217C5.22655 10.5343 4.79049 10.9704 4.32181 10.8674C3.85313 10.7645 3.63994 10.1858 3.21355 9.02849L1.79151 5.16866C0.940919 2.85991 0.515624 1.70554 1.11059 1.11057C1.70556 0.515609 2.85993 0.940904 5.16867 1.7915L9.02851 3.21354C10.1858 3.63992 10.7645 3.85311 10.8674 4.32179C10.9704 4.79048 10.5343 5.22654 9.66219 6.09866L8.81031 6.95054L11.5999 9.74017C11.8888 10.029 12.0332 10.1734 12.0999 10.3345C12.1889 10.5494 12.1889 10.7907 12.0999 11.0055C12.0332 11.1667 11.8888 11.3111 11.5999 11.5999C11.3111 11.8888 11.1667 12.0332 11.0056 12.0999C10.7907 12.1889 10.5494 12.1889 10.3346 12.0999C10.1735 12.0332 10.029 11.8888 9.74019 11.5999Z"
+                fill="white"
+              />
+            </svg>
+          </span>
+        </button>
       </div>
     </div>
   );
